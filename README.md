@@ -26,3 +26,9 @@ This script assumes and requires the following:
 - Windows IIS Support (?)
   - Unlikely to be implemented soon, IIS has a different certificate structure than LetsEncrypt currently puts out. It likes *.pfx files, instead of cert chain+key files. 
   - Will most likely be written Powershell to effectively communicate with IIS
+- Cleanup shebang in main.py, and hacky sed rewrite in setup.sh
+- Better way to define ssh host keys for hosts or groups of hosts
+
+## NOTE: 
+
+Windows is currently untested. `setup.ps1` is included more of as a Windows excersise, as well as for anyone who runs powershell on linux. Don't expect everything to work swimmingly in Windows, as Windows Python does not subscribe to the same virtual environment naming conventions or python executable naming conventions, among other issues.  
