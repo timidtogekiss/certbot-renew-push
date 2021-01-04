@@ -3,6 +3,14 @@
 # $1 = netbox uri
 # $2 = netbox api key
 
+activate () {
+    . ./venv/bin/activate
+}
+
+# deactivate () { 
+#     . ./venv/bin/deactivate
+# }
+
 if ! [ -x "$(command -v python3)" ]; then
     echo "Python 3 is not installed. Exiting..." >&2
     exit 1
@@ -30,6 +38,6 @@ sed -n -i "\"netbox_token\": \"\"/\"netbox_token\": \"$2\"" settings.json
 sed -n -i "\"netbox_url\": \"\"/\"netbox_url\": \"$1\"" settings.json
 
 python3 -m venv venv
-venv/Scripts/activate
+activate()
 pip3 install -r requirements.txt
 deactivate
