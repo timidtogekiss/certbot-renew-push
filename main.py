@@ -9,6 +9,7 @@ import json
 def gather_hosts(certdomain, netbox_token, netbox_url): 
     headers = {"Authorization": "token "+netbox_token}
 
+    # add trailing backslash check here to netbox_url
     r = requests.get(netbox_url+"virtualization/virtual-machines?tag=certauthority_"+certdomain, headers=headers)
     #r2 = requests.get(netbox_url+"dcim/devices?tag=certauthority_"+certdomain, headers=headers)
     r.raise_for_status()
