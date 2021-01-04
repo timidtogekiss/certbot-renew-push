@@ -16,3 +16,13 @@ This script assumes and requires the following:
     - Tags defined in Netbox for hosts, matching the pattern `certauthority_sitename.com`, where "sitename.com" is the name of the certificate from Certbot (find your certificate name using `certbot certificates`)
 - A Certbot instance that is renewing certificates
 - A python virtual environment (configured by `setup.sh` in this repository)
+
+## Upcoming Additions
+
+- Static JSON configuration of hosts
+- Configurable Netbox tag beginnings (instead of `certauthority_*`)
+- Enable/disable physical hosts
+- Custom destination directories/overrides depending on OS (Netbox and Static host configuration)
+- Windows IIS Support (?)
+  - Unlikely to be implemented soon, IIS has a different certificate structure than LetsEncrypt currently puts out. It likes *.pfx files, instead of cert chain+key files. 
+  - Will most likely be written Powershell to effectively communicate with IIS
