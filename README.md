@@ -16,6 +16,7 @@ This script assumes and requires the following:
     - Tags defined in Netbox for hosts, matching the pattern `certauthority_sitename.com`, where "sitename.com" is the name of the certificate from Certbot (find your certificate name using `certbot certificates`)
 - A Certbot instance that is renewing certificates
 - A python virtual environment (configured by `setup.sh` in this repository)
+- An ssh key added to all managed servers with write access to the target directory (defined in `settings.json`, manually for now)
 
 ## Upcoming Additions
 
@@ -25,10 +26,10 @@ This script assumes and requires the following:
 - Custom destination directories/overrides depending on OS (Netbox and Static host configuration)
 - Windows IIS Support (?)
   - Unlikely to be implemented soon, IIS has a different certificate structure than LetsEncrypt currently puts out. It likes *.pfx files, instead of cert chain+key files. 
-  - Will most likely be written Powershell to effectively communicate with IIS
-- Cleanup shebang in main.py, and hacky sed rewrite in setup.sh
+  - Will most likely require Powershell to effectively communicate with IIS. Will require WinRM enabled on the desitnation servers to make use of Powershell remote connections.
+- Cleanup shebang in main.py, and fix hacky sed rewrite in setup.sh to make the shebang portable with the virtual environment
 - Better way to define ssh host keys for hosts or groups of hosts
 
 ## NOTE: 
 
-Windows is currently untested. `setup.ps1` is included more of as a Windows excersise, as well as for anyone who runs powershell on linux. Don't expect everything to work swimmingly in Windows, as Windows Python does not subscribe to the same virtual environment naming conventions or python executable naming conventions, among other issues.  
+Windows is currently untested. `setup.ps1` is included more of as an excersise for the future, as well as for anyone who runs powershell on linux. Don't expect everything to work swimmingly in Windows, as Windows Python does not subscribe to the same virtual environment naming conventions or python executable naming conventions, among other issues. Powershell setup script is currently untested. 
