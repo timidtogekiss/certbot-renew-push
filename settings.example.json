@@ -1,12 +1,12 @@
 {
     "netbox" : {
         "token" : "",
-        "api_url": "",
-        "tag_base": ""
+        "api_url": "http://netbox.example.com/api/",
+        "tag_base": "certauthority_"
     },
     "ssh": {
-        "user": "",
-        "key_path": ""
+        "user": "certuser",
+        "key_path": "/home/certuser/.ssh/id_rsa"
     },
-    "dest_path": ""
+    "dest_path": "/etc/ssl/"
 }
