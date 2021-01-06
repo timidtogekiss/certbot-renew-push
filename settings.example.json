@@ -1,6 +1,12 @@
 {
-    "netbox_token": "",
-    "netbox_url": "",
-    "ssh_user": "",
-    "ssh_key_path": ""
+    "netbox" : {
+        "token" : "",
+        "api_url": "",
+        "tag_base": ""
+    },
+    "ssh": {
+        "user": "",
+        "key_path": ""
+    },
+    "dest_path": ""
 }
